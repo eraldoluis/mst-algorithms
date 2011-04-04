@@ -1,24 +1,24 @@
 
 //////////////////////////////////////////////////////////////////// 
 
- Eraldo LuÌs Rezende Fernandes
+ Eraldo Lu√≠s Rezende Fernandes
  
- Algoritmos AvanÁados
+ Algoritmos Avan√ßados
  
- Prof. Ruy Luiz Milidi˙
+ Prof. Ruy Luiz Milidi√∫
  
  Outubro de 2003
  
 ====================================================================
 
 
-Esses arquivos contÍm as implementaÁıes de exercÌcios das listas da 
-primeira parte da disciplina Algoritmo AvanÁados ministrada no curso 
-de Mestrado em Inform·tica da PUC-Rio no perÌodo 2003/2.
+Esses arquivos cont√™m as implementa√ß√µes de exerc√≠cios das listas da 
+primeira parte da disciplina Algoritmo Avan√ßados ministrada no curso 
+de Mestrado em Inform√°tica da PUC-Rio no per√≠odo 2003/2.
 
-Abaixo segue a descriÁ„o do conte˙do de cada arquivo.
+Abaixo segue a descri√ß√£o do conte√∫do de cada arquivo.
 
-Arquivo                   DescriÁ„o
+Arquivo                   Descri√ß√£o
 =======                   =========
 
 graph.h
@@ -35,68 +35,68 @@ disjointset.h [.cpp]
 
 heap.h
 
-                          DeclaraÁ„o de um tipo abstrato de dados 
+                          Declara√ß√£o de um tipo abstrato de dados 
                           templatizado Heap.
 
 
 binomial.h
 
-                          ImplementaÁ„o de um heap binomial.
+                          Implementa√ß√£o de um heap binomial.
 
 
 fibonacci.h
 
-                          ImplementaÁ„o de um heap de fibonacci.
+                          Implementa√ß√£o de um heap de fibonacci.
 
 
 kruskal.h [.cpp]
 
-                          ImplementaÁ„o do algoritmo de Kruskal para 
-                          ¡rvore Geradora MÌnima.
+                          Implementa√ß√£o do algoritmo de Kruskal para 
+                          √Årvore Geradora M√≠nima.
                           
 
 prim.h [.cpp]
 
-                          ImplementaÁ„o do algoritmo de Prim para 
-                          ¡rvore Geradora MÌnima utilizando heap 
+                          Implementa√ß√£o do algoritmo de Prim para 
+                          √Årvore Geradora M√≠nima utilizando heap 
                           binomial e heap de Fibonacci.
 
 
 test_kruskal.cpp
 
-                          Arquivo para gerar um execut·vel para 
+                          Arquivo para gerar um execut√°vel para 
                           utilizar o algoritmo de Kruskal.
 
 
 test_bprim.cpp
 
-                          Arquivo para gerar um execut·vel para 
+                          Arquivo para gerar um execut√°vel para 
                           utilizar o algoritmo de Prim utilizando 
                           heap binomial.
                           
                           
 test_fprim.cpp
 
-                          Arquivo para gerar um execut·vel para 
+                          Arquivo para gerar um execut√°vel para 
                           utilizar o algoritmo de Prim utilizando 
                           heap de Fibonacci.
                           
 
 graph.txt
 
-                          Exemplo de um arquivo de descriÁ„o de um 
+                          Exemplo de um arquivo de descri√ß√£o de um 
                           grafo.
                           
 
-Os trÍs arquivos execut·veis que podem ser gerados possuem uma 
-sintaxe semelhante. Eles recebem como primeiro par‚metro o nome de um 
-arquivo texto contendo a descriÁ„o de um grafo com pesos nas arestas.
+Os tr√™s arquivos execut√°veis que podem ser gerados possuem uma 
+sintaxe semelhante. Eles recebem como primeiro par√¢metro o nome de um 
+arquivo texto contendo a descri√ß√£o de um grafo com pesos nas arestas.
 
-A sintaxe do arquivo de descriÁ„o do grafo È bem simples. A primeira 
-informaÁ„o deve ser o n˙mero de vÈrtices do grafo. As informaÁıes 
+A sintaxe do arquivo de descri√ß√£o do grafo √© bem simples. A primeira 
+informa√ß√£o deve ser o n√∫mero de v√©rtices do grafo. As informa√ß√µes 
 seguintes devem ser da forma '(v,u,w)', uma para cada aresta do 
-grafo. Para cada informaÁ„o desse tipo ser· criada uma aresta (v,u) 
+grafo. Para cada informa√ß√£o desse tipo ser√° criada uma aresta (v,u) 
 com peso w no grafo. (Veja o arquivo 'graph.txt'.)
 
 
-Eraldo LuÌs.
+Eraldo Lu√≠s.
