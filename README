@@ -1,102 +1,68 @@
-
-//////////////////////////////////////////////////////////////////// 
-
- Eraldo Luís Rezende Fernandes
- 
- Algoritmos Avançados
- 
- Prof. Ruy Luiz Milidiú
- 
- Outubro de 2003
- 
 ====================================================================
 
+ Algoritmos para Árvore Geradora Mínima (MST)
 
-Esses arquivos contêm as implementações de exercícios das listas da 
-primeira parte da disciplina Algoritmo Avançados ministrada no curso 
-de Mestrado em Informática da PUC-Rio no período 2003/2.
+ Autor: Eraldo R. Fernandes
 
-Abaixo segue a descrição do conteúdo de cada arquivo.
+ Disciplina de Algoritmos Avançados
 
-Arquivo                   Descrição
-=======                   =========
+ Prof. Ruy Luiz Milidiú
 
-graph.h
+ Programa de Pós-Graduação da PUC-Rio
 
-                          Estrutura de dados para representar um 
-                          grafo.
-                  
+ Outubro de 2003
 
-disjointset.h [.cpp]
+====================================================================
 
-                          Estruturas de dados e algoritmos para 
-                          trabalhar com conjuntos disjuntos.
+Este projeto contém as implementações de exercícios das listas da primeira parte da disciplina Algoritmo Avançados ministrada no curso de Mestrado em Informática da PUC-Rio no período 2003/2.
+
+O projeto inclui um Makefile para geração de um executável que pode ser usado para testar os algoritmos. Este programa recebe como primeiro parâmetro o nome do algoritmo a ser testado (kruskal, fprim ou bprim) e o nome de um arquivo texto contendo a descrição de um grafo com pesos nas arestas.
+
+A sintaxe do arquivo de descrição do grafo é bem simples. A primeira informação deve ser o número de vértices do grafo. As informações seguintes devem ser da forma '(v,u,w)', uma para cada aresta do grafo. Para cada informação deste tipo será criada uma aresta (v,u) com peso w no grafo. Estas informações devem estar separadas por um ou mais caracteres de espaço (em branco, linhas, etc.). Veja o arquivo 'graph.txt' para um exemplo.
+
+Abaixo segue a descrição dos principais arquivos incluídos neste projeto.
+
+== test.cpp ==
+Contém o ponto de entrada do programa. Permite a execução dos três algoritmos para MST em um grafo dado em um arquivo de entrada.
+
+
+== graph.h ==
+Estrutura de dados para representar um grafo.
+
+
+== disjointset.h [.cpp] ==
+Estruturas de dados e algoritmos para trabalhar com conjuntos disjuntos.
                           
 
-heap.h
-
-                          Declaração de um tipo abstrato de dados 
-                          templatizado Heap.
+== heap.h ==
+Declaração de um tipo abstrato de dados Heap (usando template).
 
 
-binomial.h
-
-                          Implementação de um heap binomial.
-
-
-fibonacci.h
-
-                          Implementação de um heap de fibonacci.
+== binomial.h ==
+Implementação de um heap binomial.
 
 
-kruskal.h [.cpp]
+== fibonacci.h ==
+Implementação de um heap de fibonacci.
 
-                          Implementação do algoritmo de Kruskal para 
-                          Árvore Geradora Mínima.
+
+== kruskal.h [.cpp] ==
+Implementação do algoritmo de Kruskal para Árvore Geradora Mínima.
                           
 
-prim.h [.cpp]
-
-                          Implementação do algoritmo de Prim para 
-                          Árvore Geradora Mínima utilizando heap 
-                          binomial e heap de Fibonacci.
+== prim.h [.cpp] ==
+Implementação do algoritmo de Prim para Árvore Geradora Mínima utilizando heap binomial e heap de Fibonacci.
 
 
-test_kruskal.cpp
-
-                          Arquivo para gerar um executável para 
-                          utilizar o algoritmo de Kruskal.
+== graph.txt ==
+Exemplo de arquivo de descrição de grafo.
 
 
-test_bprim.cpp
+== Debug/ ==
+Diretório contendo um Makefile para gerar um executável que pode ser depurado (debug).
 
-                          Arquivo para gerar um executável para 
-                          utilizar o algoritmo de Prim utilizando 
-                          heap binomial.
-                          
-                          
-test_fprim.cpp
 
-                          Arquivo para gerar um executável para 
-                          utilizar o algoritmo de Prim utilizando 
-                          heap de Fibonacci.
+== Release/ ==
+Diretório contendo um Makefile para gerar um executável mais eficiente (e que não poderá ser usado para depuração).
                           
 
-graph.txt
-
-                          Exemplo de um arquivo de descrição de um 
-                          grafo.
-                          
-
-Os três arquivos executáveis que podem ser gerados possuem uma 
-sintaxe semelhante. Eles recebem como primeiro parâmetro o nome de um 
-arquivo texto contendo a descrição de um grafo com pesos nas arestas.
-
-A sintaxe do arquivo de descrição do grafo é bem simples. A primeira 
-informação deve ser o número de vértices do grafo. As informações 
-seguintes devem ser da forma '(v,u,w)', uma para cada aresta do 
-grafo. Para cada informação desse tipo será criada uma aresta (v,u) 
-com peso w no grafo. (Veja o arquivo 'graph.txt'.)
-
-
-Eraldo Luís.
