@@ -1,82 +1,56 @@
-#include "binomial.h"
+#include "kruskal.h"
+#include "prim.h"
 #include "fibonacci.h"
 
-#include <stdio.h>
-#include <curses.h>
+#include <stdlib.h>
+#include <string.h>
 
-void
-PrintMenu(char name[])
-{
-	printf("\n\n");
-	printf("*** Heap %s ***\n", name);
-	printf("(i) Insert\n");
-	printf("(e) Extract Minimum\n");
-	printf("(p) Print\n");
-	printf("(x) Exit\n");
+void Usage() {
+	printf("\nUsage: mst <algorithm> <graph_file> [<root_node>]\n");
+	printf("\t<algorithm> := ( kruskal | bprim | fprim )\n\n");
 }
 
-void
-Menu(tHeap<int>* heap, char name[])
-{
-	int i;
-	const int* r;
-	char ch[2];
+int main(int argc, char* argv[]) {
+	if (argc < 3) {
+		Usage();
+		return 1;
+	}
 
-	do {
-		PrintMenu(name);
+	// Load the graph file.
+	FILE* f = fopen(argv[2], "rt");
+	if (f == NULL) {
+		printf("\nError reading file %s\n\n", argv[2]);
+		return 1;
+	}
 
-	  scanf("%s", ch);
+	tGraph* g = new tGraph();
+	g->Read(f);
+	fclose(f);
 
-		switch (ch[0]) {
-		case 'i':
-		case 'I':
-			scanf("%d", &i);
-			heap->Insert(new int(i));
-			break;
+	// Parse the given tree root.
+	int root;
+	if (argc >= 3)
+		root = atoi(argv[2]);
+	else
+		root = 0;
 
-		case 'e':
-		case 'E':
-			r = heap->ExtractMin();
-			if (r) {
-				printf("%d\n", *r);
-				delete r;
-			}
-			break;
+	tGraph* tree = NULL;
+	if (strcmp(argv[1], "kruskal") == 0)
+		tree = KruskalSpanningTree(g);
+	else if (strcmp(argv[1], "bprim") == 0)
+		tree = BinomialPrimSpanningTree(g, root);
+	else if (strcmp(argv[1], "fprim") == 0)
+		tree = FibonacciPrimSpanningTree(g, root);
+	else {
+		delete g;
+		Usage();
+		return 1;
+	}
 
-		case 'p':
-		case 'P':
-			heap->Write(stdout);
-			break;
-		}
-	} while (ch[0] != 'x' && ch[0] != 'X');
-}
+	tree->Write(stdout);
 
-void
-Auto(tHeap<int>* heap)
-{
-	heap->Insert(new int(1));
-	heap->Insert(new int(2));
-	heap->Insert(new int(3));
-	heap->Insert(new int(4));
-	heap->Insert(new int(5));
-
-	delete heap->ExtractMin();
-	delete heap->ExtractMin();
-	delete heap->ExtractMin();
-
-	heap->Write(stdout);
-}
-
-int
-main(char argc, char* argv[])
-{
-	tHeap<int>* heap;
-
-	//Menu(heap = new tBinomialHeap<int>, "Binomial");
-	Menu(heap = new tFibonacciHeap<int>, "Fibonacci");
-	//Auto(heap = new tFibonacciHeap<int>);
-
-	delete heap;
+	delete tree;
+	delete g;
 
 	return 0;
 }

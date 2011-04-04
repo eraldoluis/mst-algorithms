@@ -42,13 +42,17 @@ tGraph::Free()
 	tAdjacency* v;
 	tAdjacency* aux;
 
-	for (i = 0; i < N; ++i) {
-		v = Adjacency[i];
-		while (v) {
-			aux = v->Next;
-			delete v;
-			v = aux;
+	if (Adjacency != NULL) {
+
+		for (i = 0; i < N; ++i) {
+			v = Adjacency[i];
+			while (v) {
+				aux = v->Next;
+				delete v;
+				v = aux;
+			}
 		}
+
 	}
 
 	delete [] Adjacency;

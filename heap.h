@@ -90,6 +90,7 @@ class tHeap
 	virtual T* ExtractMin() =0;
 	virtual void Union(tHeap<T>* heap) =0;
 	virtual void DecreaseKey(tStub* st) =0;
+	virtual void Write(FILE* out) {}
 };
 
 
