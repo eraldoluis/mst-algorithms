@@ -1,0 +1,102 @@
+
+//////////////////////////////////////////////////////////////////// 
+
+ Eraldo Luís Rezende Fernandes
+ 
+ Algoritmos Avançados
+ 
+ Prof. Ruy Luiz Milidiú
+ 
+ Outubro de 2003
+ 
+====================================================================
+
+
+Esses arquivos contêm as implementações de exercícios das listas da 
+primeira parte da disciplina Algoritmo Avançados ministrada no curso 
+de Mestrado em Informática da PUC-Rio no período 2003/2.
+
+Abaixo segue a descrição do conteúdo de cada arquivo.
+
+Arquivo                   Descrição
+=======                   =========
+
+graph.h
+
+                          Estrutura de dados para representar um 
+                          grafo.
+                  
+
+disjointset.h [.cpp]
+
+                          Estruturas de dados e algoritmos para 
+                          trabalhar com conjuntos disjuntos.
+                          
+
+heap.h
+
+                          Declaração de um tipo abstrato de dados 
+                          templatizado Heap.
+
+
+binomial.h
+
+                          Implementação de um heap binomial.
+
+
+fibonacci.h
+
+                          Implementação de um heap de fibonacci.
+
+
+kruskal.h [.cpp]
+
+                          Implementação do algoritmo de Kruskal para 
+                          Árvore Geradora Mínima.
+                          
+
+prim.h [.cpp]
+
+                          Implementação do algoritmo de Prim para 
+                          Árvore Geradora Mínima utilizando heap 
+                          binomial e heap de Fibonacci.
+
+
+test_kruskal.cpp
+
+                          Arquivo para gerar um executável para 
+                          utilizar o algoritmo de Kruskal.
+
+
+test_bprim.cpp
+
+                          Arquivo para gerar um executável para 
+                          utilizar o algoritmo de Prim utilizando 
+                          heap binomial.
+                          
+                          
+test_fprim.cpp
+
+                          Arquivo para gerar um executável para 
+                          utilizar o algoritmo de Prim utilizando 
+                          heap de Fibonacci.
+                          
+
+graph.txt
+
+                          Exemplo de um arquivo de descrição de um 
+                          grafo.
+                          
+
+Os três arquivos executáveis que podem ser gerados possuem uma 
+sintaxe semelhante. Eles recebem como primeiro parâmetro o nome de um 
+arquivo texto contendo a descrição de um grafo com pesos nas arestas.
+
+A sintaxe do arquivo de descrição do grafo é bem simples. A primeira 
+informação deve ser o número de vértices do grafo. As informações 
+seguintes devem ser da forma '(v,u,w)', uma para cada aresta do 
+grafo. Para cada informação desse tipo será criada uma aresta (v,u) 
+com peso w no grafo. (Veja o arquivo 'graph.txt'.)
+
+
+Eraldo Luís.
